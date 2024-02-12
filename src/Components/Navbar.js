@@ -49,7 +49,11 @@ function Navbar() {
         </Box>
         <Box sx={styles.rightNav}>
           {items.map((items, index) => {
-            return <Typography sx={styles.navItems}>{items}</Typography>;
+            return (
+              <Typography sx={styles.navItems} key={index}>
+                {items}
+              </Typography>
+            );
           })}
 
           {/* <Typography sx={styles.navItems}>HOME</Typography>
