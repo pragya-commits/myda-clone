@@ -55,7 +55,7 @@ function Navbar() {
               </Typography>
             );
           })}
-
+          {/* k */}
           {/* <Typography sx={styles.navItems}>HOME</Typography>
           <Typography sx={styles.navItems}>SHOP</Typography>
           <Typography sx={styles.navItems}>ABOUT US</Typography>
