@@ -1,9 +1,19 @@
+"use client";
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useRouter } from "next/navigation";
 function Navbar() {
-  const items = ["HOME", "ABOUT US", "SHOP", "HELP", "MY CART"];
+
+  const items = [
+    { label: "Home", route: "/" },
+    { label: "Shop", route: "/shops" },
+    { label: "About Us", route: "/about-us" },
+  ];
+
+  const router = useRouter();
+
   const styles = {
     rightNav: {
       display: "flex",
@@ -48,13 +58,21 @@ function Navbar() {
           <Typography sx={styles.leftHeading}>My Digital Asset</Typography>
         </Box>
         <Box sx={styles.rightNav}>
-          {items.map((items, index) => {
+          {items.map((item, index) => {
             return (
-              <Typography sx={styles.navItems} key={index}>
-                {items}
+              <Typography sx={styles.navItems} key={index}
+                onClick={() => router.push(item.route)}
+              >
+                {item.label}
               </Typography>
             );
           })}
+
+          <Button
+            startIcon={<ShoppingCartIcon />}
+          >
+            MY Cart
+          </Button>
           {/* k */}
           {/* <Typography sx={styles.navItems}>HOME</Typography>
           <Typography sx={styles.navItems}>SHOP</Typography>

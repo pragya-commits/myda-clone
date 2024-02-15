@@ -40,12 +40,13 @@ function Herosection() {
       <Box sx={styles.HeroBox}>
         <video
           sx={styles.vd}
-          controls
+          // controls
           autoPlay
           loop
           playsInline
           width="500"
           height="300"
+
         >
           <source
             src="https://myda.co.in/Home/phone_tap_grey.mp4"

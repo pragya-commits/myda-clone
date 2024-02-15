@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-
+import TwitterIcon from '@mui/icons-material/Twitter';
 function Footer() {
   const footer1 = ["My Digital Asset"];
   const footer2 = ["Product", "Overview", "Features", "Pricing", "Releases"];
@@ -78,11 +78,15 @@ function Footer() {
           ))}
         </Box>
         <Box>
-          {footer5.map((item, index) => (
+          {/* {footer5.map((item, index) => (
             <Typography key={index} sx={styles.footerItems}>
               {item}
             </Typography>
-          ))}
+          ))} */}
+          <TwitterIcon
+            color="primary"
+          />
+
         </Box>
       </Box>
     </Box>
