@@ -13,6 +13,7 @@ const nextConfig = {
       "https://myda-documents.s3.ap-south-1.amazonaws.com/contactless.png",
       "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.46329096796249725-ezgif.com-gif-maker.gif",
       "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.7385299592129813-package%20(1).png",
+      "https://myda.co.in",
     ],
   },
 };

@@ -4,7 +4,7 @@ import Image from "next/image";
 function Network() {
   const styles = {
     mainBox: {
-      background: "white",
+      // background: "rgb(245,245,245)",
       color: "black",
       display: "flex",
       paddingRight: "100px",

@@ -4,7 +4,7 @@ import Image from "next/image";
 function Nature() {
   const styles = {
     mainBox: {
-      background: "white",
+      // background: "rgb(245,245,245)",
       color: "black",
       paddingBottom: "50px",
       paddingRight: "100px",
@@ -73,7 +73,7 @@ function Nature() {
             cards!
           </Typography>
           <Button sx={styles.btn} variant="contained">
-            GET YOUR MYDA NOW!!
+            GET YOUR MYDA NOW!!!!
           </Button>
         </Box>
       </Box>

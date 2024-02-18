@@ -2,14 +2,15 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useRouter } from "next/navigation";
 function Navbar() {
-
   const items = [
-    { label: "Home", route: "/" },
-    { label: "Shop", route: "/shops" },
-    { label: "About Us", route: "/about-us" },
+    { label: "HOME", route: "/" },
+    { label: "SHOP", route: "/shops" },
+    { label: "ABOUT US", route: "/about-us" },
+    { label: "HELP ", route: "/help " },
   ];
 
   const router = useRouter();
@@ -36,12 +37,23 @@ function Navbar() {
       paddingBottom: "25px",
     },
     leftHeading: {
-      fontSize: "18px",
+      fontSize: "22px",
+      fontWeight: "500",
+      paddingTop: "5px",
       fontWeight: "500",
     },
     leftContent: {
       display: "flex",
       justifyContent: "space-between",
+    },
+    NavBtn: {
+      background: "black",
+      color: "white",
+      borderRadius: "20px",
+      paddingRight: "10px",
+      paddingLeft: "10px",
+      paddingBottom: "5px",
+      paddingTop: "5px",
     },
   };
   return (
@@ -52,15 +64,17 @@ function Navbar() {
             src={
               "https://myda.co.in/_next/image?url=%2Fmyda_logo_black.png&w=384&q=100"
             }
-            width={72.5}
-            height={35}
+            width={116}
+            height={56}
           />
           <Typography sx={styles.leftHeading}>My Digital Asset</Typography>
         </Box>
         <Box sx={styles.rightNav}>
           {items.map((item, index) => {
             return (
-              <Typography sx={styles.navItems} key={index}
+              <Typography
+                sx={styles.navItems}
+                key={index}
                 onClick={() => router.push(item.route)}
               >
                 {item.label}
@@ -68,17 +82,9 @@ function Navbar() {
             );
           })}
 
-          <Button
-            startIcon={<ShoppingCartIcon />}
-          >
+          <Button sx={styles.NavBtn} startIcon={<ShoppingCartIcon />}>
             MY Cart
           </Button>
-          {/* k */}
-          {/* <Typography sx={styles.navItems}>HOME</Typography>
-          <Typography sx={styles.navItems}>SHOP</Typography>
-          <Typography sx={styles.navItems}>ABOUT US</Typography>
-          <Typography sx={styles.navItems}>HELP</Typography>
-          <Typography sx={styles.navItems}>MY CART</Typography> */}
         </Box>
       </Box>
     </Box>

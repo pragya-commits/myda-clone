@@ -1,6 +1,12 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import TwitterIcon from '@mui/icons-material/Twitter';
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import Image from "next/image";
+import { blue } from "@mui/material/colors";
 function Footer() {
   const footer1 = ["My Digital Asset"];
   const footer2 = ["Product", "Overview", "Features", "Pricing", "Releases"];
@@ -16,31 +22,46 @@ function Footer() {
   const styles = {
     footerItems: {
       fontWeight: "300",
-      fontSize: "18px",
+      fontSize: "25px",
       background: "rgb(40,40,40)",
-      paddingRight: "150px",
+      paddingRight: "80px",
     },
     digitalAsset: {
-      paddingTop: "50px",
+      paddingTop: "10px",
       paddingRight: "100px",
-      paddingLeft: "10px",
+      paddingLeft: "5px",
+      fontSize: "20px",
     },
     foot: {
       fontWeight: "300",
-      fontSize: "28px",
+      fontSize: "40px",
       background: "rgb(40,40,40)",
       display: "flex",
       justifyContent: "space-between",
       background: "rgb(40,40,40)",
       background: "rgb(40,40,40)",
-      paddingTop: "50px",
-      paddingBottom: "50px",
+      paddingTop: "80px",
+      paddingBottom: "80px",
+      paddingLeft: "20px",
+      paddingRight: "20px",
+      color: "white",
     },
     footerMain: {
       display: "flex",
       justifyContent: "space-between",
       paddingRight: "200px",
       paddingLeft: "70px",
+      color: "white",
+    },
+    insta: {
+      color: "red",
+    },
+    you: {
+      color: "red",
+    },
+    text: {
+      color: "white",
+      fontSize: "20px",
     },
   };
 
@@ -48,6 +69,13 @@ function Footer() {
     <Box sx={styles.foot}>
       <Box sx={styles.footerMain}>
         <Box sx={styles.footerBox}>
+          <Image
+            src={
+              "https://myda.co.in/_next/image?url=%2Fmyda_logo_white.png&w=384&q=100"
+            }
+            width={116}
+            height={56}
+          />
           {footer1.map((item, index) => (
             <Typography key={index} sx={styles.digitalAsset}>
               {item}
@@ -78,15 +106,13 @@ function Footer() {
           ))}
         </Box>
         <Box>
-          {/* {footer5.map((item, index) => (
-            <Typography key={index} sx={styles.footerItems}>
-              {item}
-            </Typography>
-          ))} */}
-          <TwitterIcon
-            color="primary"
-          />
-
+          <Typography sx={styles.text}>Follow Us </Typography>
+          <TwitterIcon color="primary" />
+          <FacebookIcon sx={styles.fb} color="primary" />
+          <InstagramIcon sx={styles.insta} color="primary" />
+          <LinkedInIcon color="primary" />
+          <YouTubeIcon sx={styles.you} color="primary" />
+          <Typography sx={styles.text}>Download the app</Typography>
         </Box>
       </Box>
     </Box>

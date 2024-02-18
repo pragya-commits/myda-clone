@@ -4,7 +4,7 @@ import Image from "next/image";
 function Order() {
   const styles = {
     orderBox: {
-      background: "white",
+      // background: "rgb(245,245,245)",
       color: "black",
       paddingRight: "200px",
       paddingLeft: "200px",

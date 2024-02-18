@@ -1,5 +1,5 @@
 import React from "react";
-import Client from "./client";
+import Client from "./Client";
 
 export default function page() {
   return (

@@ -55,7 +55,7 @@ function Products() {
       fontSize: "18px",
     },
     ProductPage: {
-      background: "white",
+      // background: "rgb(245,245,245)",
       color: "black",
     },
   };

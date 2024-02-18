@@ -4,7 +4,7 @@ import Image from "next/image";
 function Herosection() {
   const styles = {
     HeroBox: {
-      background: "white",
+      // background: "rgb(245,245,245)",
       display: "flex",
       justifyContent: "space-between",
       alignItem: "center",
@@ -34,25 +34,13 @@ function Herosection() {
     vd: {
       background: "white",
     },
+    mainBox: {
+      // background: "rgb(245,245,245)",
+    },
   };
   return (
-    <Box>
+    <Box sx={styles.mainBox}>
       <Box sx={styles.HeroBox}>
-        <video
-          sx={styles.vd}
-          // controls
-          autoPlay
-          loop
-          playsInline
-          width="500"
-          height="300"
-
-        >
-          <source
-            src="https://myda.co.in/Home/phone_tap_grey.mp4"
-            type="video/mp4"
-          />
-        </video>
         <Box sx={styles.rightContent}>
           <Image
             src={

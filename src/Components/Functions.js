@@ -5,13 +5,12 @@ function Functions() {
   const styles = {
     mainBox: {
       display: "flex",
-
       padding: "40px",
     },
     FuncBox: {
       display: "flex",
       justifyContent: "space-between",
-      background: "white",
+
       color: "black",
       padding: "50px",
     },
@@ -25,7 +24,7 @@ function Functions() {
       textAlign: "center",
       fontSize: "40px",
       fontWeight: "500",
-      background: "white",
+      // background: "rgb(245,245,245)",
       color: "black",
     },
     heading: {
@@ -39,9 +38,12 @@ function Functions() {
     content: {
       fontSize: "16px",
     },
+    mainBox: {
+      background: "rgb(245,245,245)",
+    },
   };
   return (
-    <Box>
+    <Box sx={styles.mainBox}>
       <Typography sx={styles.mainHead}>
         MyDA Can be your game changer!
       </Typography>
