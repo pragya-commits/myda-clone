@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
+import ProductCard from "./Shops/ProductCard";
 function Products() {
   const styles = {
     cardMain: {
@@ -10,10 +11,15 @@ function Products() {
       display: "flex",
       background: "white",
       color: "black",
-      paddingRight: "80px",
-      paddingLeft: "80px",
-      alignItem: "center",
+      // paddingRight: "80px",
+      // paddingLeft: "80px",
+      // alignItem: "center",
       justifyContent: "space-between",
+      flexWrap: "wrap",
+      // in 1 row show 4 cards
+      display: "grid",
+      gridTemplateColumns: "repeat(4, 1fr)",
+
     },
     cardHead: {
       fontSize: "18px",
@@ -59,172 +65,65 @@ function Products() {
       color: "black",
     },
   };
+
+
+
+  const products = [
+    {
+      name: "Business Cards-Black Matte",
+      price: 599,
+      image: "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.46329096796249725-ezgif.com-gif-maker.gif"
+    },
+    {
+      name: "NFC Cards-white",
+      price: 599,
+      image: "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.7385299592129813-package%20(1).png"
+    },
+    {
+      name: "Business Card-Black Matte",
+      price: 599,
+      image: "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.3304137034438086-003%20(1).png"
+    },
+    {
+      name: "Business Cards-White",
+      price: 599,
+      image: "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.5335067616621598-004%20(1).png"
+    },
+    {
+      name: "Phone Ring-Black",
+      price: 499,
+      image: "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.5560472080037671-ring%20on%20phone_black.png"
+    },
+    {
+      name: "Phone Ring-Rose Gold",
+      price: 499,
+      image: "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.34717519049763035-ring%20on%20phone_rose%20gold.png"
+    },
+    {
+      name: "Key Chain-Black",
+      price: 499,
+      image: "https://nural-sales-document-bucket.s3-ap-south-1.amazonaws.com/picture/0.6929204477024355-keychain_front-and-back_black.png"
+    },
+    {
+      name: "Key Chain White",
+      price: 499,
+      image: "https://nural-sales-document-bucket.s3-ap-south-1.amazonaws.com/picture/0.7146742784067155-keychain_front-and-back_white.png"
+    },
+  ]
+
   return (
     <Box sx={styles.ProductPage}>
       <Typography sx={styles.mainHeading}>See our top products!</Typography>
+
       <Box sx={styles.Cards}>
-        {/* <Typography>See our top products!</Typography> */}
-        {/* CARD 1 */}
-        <Box sx={styles.cardMain}>
-          <Image
-            src={
-              "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.46329096796249725-ezgif.com-gif-maker.gif"
-            }
-            width={234.3}
-            height={149.99}
-          />
-          <Box sx={styles.cc}>
-            <Box sx={styles.cardContent}>
-              <Typography sx={styles.cardHead}>
-                Business Cards-Black Matte
-              </Typography>
-              <Typography sx={styles.cardText}>Rs. 599 </Typography>
-              <Button variant="contained" sx={styles.btn}>
-                ADD TO CART
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-        {/* CARD 2 */}
-        <Box sx={styles.cardMain}>
-          <Image
-            src={
-              "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.7385299592129813-package%20(1).png"
-            }
-            width={95.67}
-            height={149.98}
-          />
-          <Box sx={styles.cc}>
-            <Box sx={styles.cardContent}>
-              <Typography sx={styles.cardHead}>NFC Cards-white</Typography>
-              <Typography sx={styles.cardText}>Rs. 599 </Typography>
-              <Button variant="contained" sx={styles.btn}>
-                ADD TO CART
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-        {/* CARD 3 */}
-        <Box sx={styles.cardMain}>
-          <Image
-            src={
-              "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.3304137034438086-003%20(1).png"
-            }
-            width={167.46}
-            height={149.99}
-          />
-          <Box sx={styles.cc}>
-            <Box sx={styles.cardContent}>
-              <Typography sx={styles.cardHead}>
-                Business Card-Black Matte
-              </Typography>
-              <Typography sx={styles.cardText}>Rs. 599 </Typography>
-              <Button variant="contained" sx={styles.btn}>
-                ADD TO CART
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-        {/* CARD 4 */}
-        <Box sx={styles.cardMain}>
-          <Image
-            src={
-              "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.5335067616621598-004%20(1).png"
-            }
-            width={167.46}
-            height={149.99}
-          />
-          <Box sx={styles.cc}>
-            <Box sx={styles.cardContent}>
-              <Typography sx={styles.cardHead}>Business Cards-White</Typography>
-              <Typography sx={styles.cardText}>Rs. 599 </Typography>
-              <Button variant="contained" sx={styles.btn}>
-                ADD TO CART
-              </Button>
-            </Box>
-          </Box>
-        </Box>
+        {/* <ProductCard /> */}
+        {products.map((product, item) => {
+          return <ProductCard key={item} name={product.name} price={product.price} image={product.image} />
+        })}
       </Box>
-      <Box sx={styles.Cards}>
-        {/* <Typography>See our top products!</Typography> */}
-        {/* CARD 5 */}
-        <Box sx={styles.cardMain}>
-          <Image
-            src={
-              "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.5560472080037671-ring%20on%20phone_black.png"
-            }
-            width={150}
-            height={150}
-          />
-          <Box sx={styles.cc}>
-            <Box sx={styles.cardContent}>
-              <Typography sx={styles.cardHead}>Phone Ring-Black</Typography>
-              <Typography sx={styles.cardText}>Rs. 499 </Typography>
-              <Button variant="contained" sx={styles.btn}>
-                ADD TO CART
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-        {/* CARD 6 */}
-        <Box sx={styles.cardMain}>
-          <Image
-            src={
-              "https://myda-documents.s3-ap-south-1.amazonaws.com/picture/0.34717519049763035-ring%20on%20phone_rose%20gold.png"
-            }
-            width={150}
-            height={150}
-          />
-          <Box sx={styles.cc}>
-            <Box sx={styles.cardContent}>
-              <Typography sx={styles.cardHead}>Phone Ring-Rose Gold</Typography>
-              <Typography sx={styles.cardText}>Rs. 499 </Typography>
-              <Button variant="contained" sx={styles.btn}>
-                ADD TO CART
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-        {/* CARD 7 */}
-        <Box sx={styles.cardMain}>
-          <Image
-            src={
-              "https://nural-sales-document-bucket.s3-ap-south-1.amazonaws.com/picture/0.6929204477024355-keychain_front-and-back_black.png"
-            }
-            width={150}
-            height={150}
-          />
-          <Box sx={styles.cc}>
-            <Box sx={styles.cardContent}>
-              <Typography sx={styles.cardHead}>Key Chain-Black</Typography>
-              <Typography sx={styles.cardText}>Rs. 499 </Typography>
-              <Button variant="contained" sx={styles.btn}>
-                ADD TO CART
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-        {/* CARD 8 */}
-        <Box sx={styles.cardMain}>
-          <Image
-            src={
-              "https://nural-sales-document-bucket.s3-ap-south-1.amazonaws.com/picture/0.7146742784067155-keychain_front-and-back_white.png"
-            }
-            width={150}
-            height={150}
-          />
-          <Box sx={styles.cc}>
-            <Box sx={styles.cardContent}>
-              <Typography sx={styles.cardHead}>Key Chain White</Typography>
-              <Typography sx={styles.cardText}>Rs. 499 </Typography>
-              <Button variant="contained" sx={styles.btn}>
-                ADD TO CART
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+
       <Button sx={styles.Pbtn}>SEE ALL PRODUCTS</Button>
+
     </Box>
   );
 }
